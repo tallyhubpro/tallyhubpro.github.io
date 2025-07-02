@@ -1,0 +1,2170 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Professional Tally Light System for Video Production - Cost-effective, modern, and open-source tally lights for OBS Studio, vMix, and more">
+      
+      
+      
+        <link rel="canonical" href="https://tallyhubpro.github.io/getting-started/complete-setup/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../quick-start/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
+    
+    
+      
+        <title>Complete Setup - Tally Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#complete-setup-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Tally Hub" class="md-header__button md-logo" aria-label="Tally Hub" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Tally Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Complete Setup
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tallyhubpro/Tallyhub" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tallyhubpro/Tallyhub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../features/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Features
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../download/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Download
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../hardware/" class="md-tabs__link">
+          
+  
+  
+  Hardware
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mixers/supported-mixers/" class="md-tabs__link">
+          
+  
+  
+  Video Mixers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../admin-panel/" class="md-tabs__link">
+          
+  
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tally Hub" class="md-nav__button md-logo" aria-label="Tally Hub" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Tally Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tallyhubpro/Tallyhub" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tallyhubpro/Tallyhub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Features
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../download/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Download
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Quick Start
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Complete Setup
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Setup
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerequisites Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-server-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Part 1: Server Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Part 1: Server Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-and-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download and Install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-video-mixer-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎥 Part 2: Video Mixer Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎥 Part 2: Video Mixer Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-obs-studio-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: OBS Studio Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-vmix-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: vMix Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-web-based-tallies" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Part 3: Web-based Tallies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📱 Part 3: Web-based Tallies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-web-tallies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Web Tallies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-web-tallies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Web Tallies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-hardware-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Part 4: Hardware Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Part 4: Hardware Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-1732s019-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32-1732S019 Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m5stick-c-plus-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      M5Stick C Plus Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-device-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Part 5: Device Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Part 5: Device Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-tally-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Tally States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-devices-to-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assign Devices to Sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-assignment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Assignment Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-network-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Part 6: Network Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Part 6: Network Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-network-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Network Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-network-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Professional Network Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewall Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Part 7: Testing and Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Part 7: Testing and Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-functionality-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Functionality Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-readiness-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Readiness Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Troubleshooting Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devices-wont-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Devices Won't Connect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-tally-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slow Tally Updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-panel-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Panel Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Next Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expand-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expand Your System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join-the-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join the Community
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Professional Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Success!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firmware-flashing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Firmware Flashing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Hardware
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Hardware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hardware/supported-devices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Devices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Video Mixers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Video Mixers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mixers/supported-mixers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Supported Mixers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    User Guide
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-panel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Admin Panel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Prerequisites Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-server-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Part 1: Server Installation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Part 1: Server Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download-and-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      Download and Install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Installation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-video-mixer-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎥 Part 2: Video Mixer Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎥 Part 2: Video Mixer Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-obs-studio-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option A: OBS Studio Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-vmix-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option B: vMix Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-web-based-tallies" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Part 3: Web-based Tallies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📱 Part 3: Web-based Tallies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-web-tallies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup Web Tallies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimize-web-tallies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimize Web Tallies
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-hardware-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Part 4: Hardware Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Part 4: Hardware Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#esp32-1732s019-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      ESP32-1732S019 Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#m5stick-c-plus-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      M5Stick C Plus Setup
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-device-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Part 5: Device Assignment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚙️ Part 5: Device Assignment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#understanding-tally-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Tally States
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-devices-to-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assign Devices to Sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-assignment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Assignment Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-network-optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌐 Part 6: Network Optimization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Part 6: Network Optimization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-network-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Network Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-network-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Professional Network Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Firewall Configuration
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-testing-and-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔍 Part 7: Testing and Validation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Part 7: Testing and Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-functionality-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Functionality Test
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-readiness-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Readiness Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚨 Troubleshooting Common Issues
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚨 Troubleshooting Common Issues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#devices-wont-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      Devices Won't Connect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-tally-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slow Tally Updates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#admin-panel-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Admin Panel Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Next Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎓 Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expand-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expand Your System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join-the-community" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join the Community
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#professional-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Professional Support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Success!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="complete-setup-guide">Complete Setup Guide<a class="headerlink" href="#complete-setup-guide" title="Permanent link">&para;</a></h1>
+<p>This comprehensive guide will walk you through setting up Tally Hub from start to finish, including hardware flashing, network configuration, and video mixer integration.</p>
+<h2 id="prerequisites-checklist">📋 Prerequisites Checklist<a class="headerlink" href="#prerequisites-checklist" title="Permanent link">&para;</a></h2>
+<p>Before starting, ensure you have:</p>
+<ul>
+<li>[ ] <strong>Computer</strong>: Windows 10+, macOS 10.14+, or Linux</li>
+<li>[ ] <strong>Network</strong>: WiFi network for devices (2.4GHz recommended)</li>
+<li>[ ] <strong>Video Mixer</strong>: OBS Studio or vMix (optional for testing)</li>
+<li>[ ] <strong>Web Browser</strong>: Chrome, Firefox, Safari, or Edge</li>
+<li>[ ] <strong>Hardware</strong> (optional): ESP32 or M5Stick devices</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Start Simple</p>
+<p>Begin with web-based tallies using smartphones before investing in hardware. This validates your setup and helps you understand the workflow.</p>
+</div>
+<h2 id="part-1-server-installation">🎯 Part 1: Server Installation<a class="headerlink" href="#part-1-server-installation" title="Permanent link">&para;</a></h2>
+<h3 id="download-and-install">Download and Install<a class="headerlink" href="#download-and-install" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Linux</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li><strong>Download</strong> the <a href="../../download/">Windows package</a></li>
+<li><strong>Extract</strong> to <code>C:\TallyHub</code> (or preferred location)</li>
+<li><strong>Right-click</strong> <code>Start Tally Hub.bat</code> → <strong>Run as Administrator</strong></li>
+<li><strong>Wait</strong> for automatic dependency installation</li>
+<li><strong>Verify</strong> installation: http://localhost:3000</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li><strong>Download</strong> the <a href="../../download/">macOS package</a></li>
+<li><strong>Extract</strong> to <code>/Applications/TallyHub</code></li>
+<li><strong>Control+Click</strong> <code>Start Tally Hub.command</code> → <strong>Open</strong></li>
+<li><strong>Click Open</strong> when macOS security dialog appears</li>
+<li><strong>Verify</strong> installation: http://localhost:3000</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Download and install</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>https://github.com/tallyhubpro/Tallyhub/releases/latest/download/tally-hub-linux.tar.gz
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>tally-hub-linux.tar.gz
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w"> </span>Tallyhub
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>chmod<span class="w"> </span>+x<span class="w"> </span><span class="s2">&quot;Start Tally Hub.command&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>./Start<span class="se">\ </span>Tally<span class="se">\ </span>Hub.command
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="verify-installation">Verify Installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Open browser</strong> to http://localhost:3000</li>
+<li><strong>Check admin panel</strong> at http://localhost:3000/admin.html</li>
+<li><strong>Test web tally</strong> at http://localhost:3000/tally.html</li>
+</ol>
+<p>If everything loads correctly, your server is ready!</p>
+<h2 id="part-2-video-mixer-configuration">🎥 Part 2: Video Mixer Configuration<a class="headerlink" href="#part-2-video-mixer-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="option-a-obs-studio-setup">Option A: OBS Studio Setup<a class="headerlink" href="#option-a-obs-studio-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Install OBS Studio</strong> (if not already installed)</li>
+<li>Download from <a href="https://obsproject.com">obsproject.com</a></li>
+<li>
+<p>Version 28+ recommended (built-in WebSocket)</p>
+</li>
+<li>
+<p><strong>Enable WebSocket Server</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>OBS → Tools → WebSocket Server Settings
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>✅ Enable WebSocket server
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Server Port: 4444
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Server Password: [create a secure password]
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Configure Tally Hub</strong>:</p>
+</li>
+<li>Open admin panel: http://localhost:3000/admin.html</li>
+<li>Go to <strong>Video Mixers</strong> section</li>
+<li>Select <strong>OBS Studio</strong></li>
+<li>Enter connection details:<ul>
+<li><strong>Host</strong>: <code>localhost</code> (if OBS on same computer)</li>
+<li><strong>Port</strong>: <code>4444</code></li>
+<li><strong>Password</strong>: [your WebSocket password]</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Connect</strong></p>
+</li>
+<li>
+<p><strong>Verify Connection</strong>:</p>
+</li>
+<li>✅ Status should show "Connected"</li>
+<li>Scene list should appear in source assignments</li>
+<li>Test by switching scenes in OBS</li>
+</ol>
+<h3 id="option-b-vmix-setup">Option B: vMix Setup<a class="headerlink" href="#option-b-vmix-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Install vMix</strong> (if not already installed)</li>
+<li>Any current vMix version works</li>
+<li>
+<p>Basic edition sufficient for testing</p>
+</li>
+<li>
+<p><strong>Enable Web Controller</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>vMix → Settings → Web Controller
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>✅ Enable Web Controller
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Port: 8088
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Username: [optional]
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Password: [optional]
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Configure Tally Hub</strong>:</p>
+</li>
+<li>Open admin panel: http://localhost:3000/admin.html</li>
+<li>Go to <strong>Video Mixers</strong> section  </li>
+<li>Select <strong>vMix</strong></li>
+<li>Enter connection details:<ul>
+<li><strong>Host</strong>: <code>localhost</code> (if vMix on same computer)</li>
+<li><strong>Port</strong>: <code>8088</code></li>
+<li><strong>Username/Password</strong>: [if configured]</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Connect</strong></p>
+</li>
+<li>
+<p><strong>Verify Connection</strong>:</p>
+</li>
+<li>✅ Status should show "Connected"</li>
+<li>vMix inputs appear in source list</li>
+<li>Test by switching preview/program in vMix</li>
+</ol>
+<h2 id="part-3-web-based-tallies">📱 Part 3: Web-based Tallies<a class="headerlink" href="#part-3-web-based-tallies" title="Permanent link">&para;</a></h2>
+<p>Perfect for testing and temporary setups.</p>
+<h3 id="setup-web-tallies">Setup Web Tallies<a class="headerlink" href="#setup-web-tallies" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Find your computer's IP address</strong>:</li>
+</ol>
+<p>=== "Windows"
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ipconfig | findstr IPv4
+</code></pre></div></p>
+<p>=== "macOS/Linux"
+       <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ifconfig<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;inet &quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="m">127</span>.0.0.1
+</code></pre></div></p>
+<ol>
+<li><strong>Access from any device</strong>:</li>
+<li><strong>URL</strong>: <code>http://[your-ip]:3000/tally.html</code></li>
+<li>
+<p><strong>Example</strong>: <code>http://192.168.1.100:3000/tally.html</code></p>
+</li>
+<li>
+<p><strong>Configure each tally</strong>:</p>
+</li>
+<li>Device will show "STANDBY" initially</li>
+<li>In admin panel, drag device to assign to a source</li>
+<li>Tally will immediately reflect the assignment</li>
+</ol>
+<h3 id="optimize-web-tallies">Optimize Web Tallies<a class="headerlink" href="#optimize-web-tallies" title="Permanent link">&para;</a></h3>
+<p>For best performance:</p>
+<ul>
+<li><strong>Disable sleep mode</strong> on phones/tablets</li>
+<li><strong>Use landscape orientation</strong> for larger display</li>
+<li><strong>Set maximum brightness</strong> for studio visibility</li>
+<li><strong>Enable "Do Not Disturb"</strong> to prevent notifications</li>
+<li><strong>Connect to same WiFi</strong> as Tally Hub server</li>
+</ul>
+<h2 id="part-4-hardware-setup">🔧 Part 4: Hardware Setup<a class="headerlink" href="#part-4-hardware-setup" title="Permanent link">&para;</a></h2>
+<h3 id="esp32-1732s019-setup">ESP32-1732S019 Setup<a class="headerlink" href="#esp32-1732s019-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Purchase Hardware</strong>:</li>
+<li>Search "ESP32-1732S019" on AliExpress or Amazon</li>
+<li>Typical cost: $15-20 including shipping</li>
+<li>
+<p>USB-C cable usually included</p>
+</li>
+<li>
+<p><strong>Flash Firmware</strong>:</p>
+</li>
+<li>Connect ESP32 to computer via USB-C</li>
+<li>Open admin panel: http://localhost:3000/admin.html</li>
+<li>Click <strong>Flash ESP32 Firmware</strong></li>
+<li>Select <strong>ESP32-1732S019</strong> device type</li>
+<li>Choose <strong>COM port</strong> from dropdown</li>
+<li>
+<p>Click <strong>Flash Firmware</strong> and wait for completion</p>
+</li>
+<li>
+<p><strong>Configure WiFi</strong>:</p>
+</li>
+<li>After flashing, device creates WiFi hotspot: <code>TallyHub-Setup</code></li>
+<li>Connect to this network with phone/computer</li>
+<li>Open browser to <code>192.168.4.1</code></li>
+<li>Enter your WiFi network credentials</li>
+<li>
+<p>Click <strong>Save</strong> - device will restart and connect</p>
+</li>
+<li>
+<p><strong>Verify Connection</strong>:</p>
+</li>
+<li>Device should appear in admin panel automatically</li>
+<li>Status should show "Connected" with IP address</li>
+<li>Device displays "STANDBY" state</li>
+</ol>
+<h3 id="m5stick-c-plus-setup">M5Stick C Plus Setup<a class="headerlink" href="#m5stick-c-plus-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Purchase Hardware</strong>:</li>
+<li>Order from M5Stack official store or authorized dealers</li>
+<li>Typical cost: $25-30</li>
+<li>
+<p>USB-C cable included</p>
+</li>
+<li>
+<p><strong>Flash Firmware</strong>:</p>
+</li>
+<li>Connect M5Stick to computer via USB-C</li>
+<li>Open admin panel: http://localhost:3000/admin.html</li>
+<li>Click <strong>Flash ESP32 Firmware</strong></li>
+<li>Select <strong>M5Stick C Plus</strong> device type</li>
+<li>Choose <strong>COM port</strong> from dropdown  </li>
+<li>
+<p>Click <strong>Flash Firmware</strong> and wait for completion</p>
+</li>
+<li>
+<p><strong>Configure WiFi</strong>:</p>
+</li>
+<li>Process identical to ESP32-1732S019</li>
+<li>
+<p>Use button controls if needed for interaction</p>
+</li>
+<li>
+<p><strong>Battery Management</strong>:</p>
+</li>
+<li>First charge: Connect USB-C for 1+ hours</li>
+<li>Normal operation: 2-3 hours wireless use</li>
+<li>Battery indicator on device screen</li>
+<li>Auto-sleep when inactive to preserve battery</li>
+</ol>
+<h2 id="part-5-device-assignment">⚙️ Part 5: Device Assignment<a class="headerlink" href="#part-5-device-assignment" title="Permanent link">&para;</a></h2>
+<h3 id="understanding-tally-states">Understanding Tally States<a class="headerlink" href="#understanding-tally-states" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>🔴 PROGRAM</strong> (Red): Device assigned to current program/live source</li>
+<li><strong>🟢 PREVIEW</strong> (Green): Device assigned to preview/next source  </li>
+<li><strong>⚫ STANDBY</strong> (Dark): Device not assigned or source inactive</li>
+</ul>
+<h3 id="assign-devices-to-sources">Assign Devices to Sources<a class="headerlink" href="#assign-devices-to-sources" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Open Admin Panel</strong>: http://localhost:3000/admin.html</p>
+</li>
+<li>
+<p><strong>View Connected Devices</strong>:</p>
+</li>
+<li>Devices appear automatically when connected</li>
+<li>Each shows IP address, type, and current state</li>
+<li>
+<p>Connection status indicator (green = connected)</p>
+</li>
+<li>
+<p><strong>Assign Sources</strong>:</p>
+</li>
+<li><strong>Drag and Drop</strong>: Drag device to source in video mixer section</li>
+<li><strong>Manual Assignment</strong>: Click device → select source dropdown</li>
+<li>
+<p><strong>Bulk Assignment</strong>: Select multiple devices → assign to same source</p>
+</li>
+<li>
+<p><strong>Test Assignments</strong>:</p>
+</li>
+<li>Switch scenes/inputs in your video mixer</li>
+<li>Tallies should respond immediately (&lt;100ms)</li>
+<li>Colors change based on program/preview state</li>
+</ol>
+<h3 id="advanced-assignment-options">Advanced Assignment Options<a class="headerlink" href="#advanced-assignment-options" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Multiple Devices per Source</strong>: Multiple tallies can show same source</li>
+<li><strong>Source Aliases</strong>: Rename sources for clearer identification  </li>
+<li><strong>Assignment Groups</strong>: Save common assignment configurations</li>
+<li><strong>Persistent Storage</strong>: Assignments survive server restarts</li>
+</ul>
+<h2 id="part-6-network-optimization">🌐 Part 6: Network Optimization<a class="headerlink" href="#part-6-network-optimization" title="Permanent link">&para;</a></h2>
+<h3 id="basic-network-setup">Basic Network Setup<a class="headerlink" href="#basic-network-setup" title="Permanent link">&para;</a></h3>
+<p>For most users, standard home/office WiFi works perfectly:</p>
+<ul>
+<li><strong>2.4GHz WiFi</strong>: Better range, sufficient for tally data</li>
+<li><strong>5GHz WiFi</strong>: Lower latency if devices support it</li>
+<li><strong>Wired Connection</strong>: Use Ethernet for Tally Hub server when possible</li>
+</ul>
+<h3 id="professional-network-setup">Professional Network Setup<a class="headerlink" href="#professional-network-setup" title="Permanent link">&para;</a></h3>
+<p>For larger installations or critical productions:</p>
+<ol>
+<li><strong>Dedicated VLAN</strong>: Separate network for production equipment</li>
+<li><strong>QoS Configuration</strong>: Prioritize tally traffic</li>
+<li><strong>Static IP Assignment</strong>: DHCP reservations for critical devices  </li>
+<li><strong>Network Monitoring</strong>: Monitor for packet loss or high latency</li>
+<li><strong>Backup Connectivity</strong>: Secondary network for redundancy</li>
+</ol>
+<h3 id="firewall-configuration">Firewall Configuration<a class="headerlink" href="#firewall-configuration" title="Permanent link">&para;</a></h3>
+<p>Ensure these ports are accessible:</p>
+<ul>
+<li><strong>TCP 3000</strong>: Tally Hub web interface</li>
+<li><strong>UDP 9999</strong>: Device communication  </li>
+<li><strong>TCP 4444</strong>: OBS WebSocket (if using OBS)</li>
+<li><strong>TCP 8088</strong>: vMix Web Controller (if using vMix)</li>
+</ul>
+<h2 id="part-7-testing-and-validation">🔍 Part 7: Testing and Validation<a class="headerlink" href="#part-7-testing-and-validation" title="Permanent link">&para;</a></h2>
+<h3 id="basic-functionality-test">Basic Functionality Test<a class="headerlink" href="#basic-functionality-test" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Web Tally Test</strong>:</li>
+<li>Open tally URL on phone/tablet</li>
+<li>Assign to a source in admin panel</li>
+<li>Switch sources in video mixer</li>
+<li>
+<p>Verify immediate color changes</p>
+</li>
+<li>
+<p><strong>Hardware Test</strong>:</p>
+</li>
+<li>Connect ESP32/M5Stick device</li>
+<li>Verify automatic discovery in admin panel</li>
+<li>Assign to source and test switching</li>
+<li>
+<p>Check display brightness and visibility</p>
+</li>
+<li>
+<p><strong>Latency Test</strong>:</p>
+</li>
+<li>Record video mixer and tally simultaneously</li>
+<li>Frame-by-frame analysis should show &lt;100ms delay</li>
+<li>Test under normal network load conditions</li>
+</ol>
+<h3 id="production-readiness-checklist">Production Readiness Checklist<a class="headerlink" href="#production-readiness-checklist" title="Permanent link">&para;</a></h3>
+<p>Before going live:</p>
+<ul>
+<li>[ ] All devices connect automatically on power-up</li>
+<li>[ ] Source assignments are correct and persistent</li>
+<li>[ ] Video mixer integration is stable</li>
+<li>[ ] Network has adequate capacity and stability</li>
+<li>[ ] Backup plans are in place for critical shows</li>
+<li>[ ] Operators are trained on the system</li>
+</ul>
+<h2 id="troubleshooting-common-issues">🚨 Troubleshooting Common Issues<a class="headerlink" href="#troubleshooting-common-issues" title="Permanent link">&para;</a></h2>
+<h3 id="devices-wont-connect">Devices Won't Connect<a class="headerlink" href="#devices-wont-connect" title="Permanent link">&para;</a></h3>
+<p><strong>Check WiFi Configuration</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Reset WiFi on ESP32 (hold BOOT button for 10 seconds during startup)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Reconfigure through setup portal</span>
+</code></pre></div></p>
+<p><strong>Verify Network Connectivity</strong>:
+- Ping Tally Hub server from device network
+- Check firewall settings on server
+- Ensure multicast is enabled on network</p>
+<h3 id="slow-tally-updates">Slow Tally Updates<a class="headerlink" href="#slow-tally-updates" title="Permanent link">&para;</a></h3>
+<p><strong>Network Optimization</strong>:
+- Use 5GHz WiFi if available
+- Check for network congestion
+- Verify QoS settings prioritize tally traffic</p>
+<p><strong>Mixer Configuration</strong>:
+- Reduce polling frequency if CPU usage high
+- Check mixer API response times
+- Verify network path between mixer and Tally Hub</p>
+<h3 id="admin-panel-issues">Admin Panel Issues<a class="headerlink" href="#admin-panel-issues" title="Permanent link">&para;</a></h3>
+<p><strong>Browser Compatibility</strong>:
+- Use Chrome, Firefox, Safari, or Edge
+- Enable JavaScript and WebSocket support
+- Clear browser cache if interface doesn't load</p>
+<p><strong>Connection Problems</strong>:
+- Verify Tally Hub server is running
+- Check URL is correct (http://localhost:3000/admin.html)
+- Ensure port 3000 is not blocked by firewall</p>
+<h2 id="next-steps">🎓 Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<h3 id="expand-your-system">Expand Your System<a class="headerlink" href="#expand-your-system" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Add More Devices</strong>: Scale up to dozens of tally lights</li>
+<li><strong>Custom Hardware</strong>: Build specialized tally solutions</li>
+<li><strong>API Integration</strong>: Connect third-party systems</li>
+<li><strong>Multi-Mixer</strong>: Connect multiple video mixers</li>
+<li><strong>Remote Monitoring</strong>: Set up off-site system monitoring</li>
+</ol>
+<h3 id="join-the-community">Join the Community<a class="headerlink" href="#join-the-community" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="https://github.com/tallyhubpro/Tallyhub/discussions">GitHub Discussions</a></strong>: Share your setup and get help</li>
+<li><strong><a href="https://github.com/tallyhubpro/Tallyhub/wiki">Wiki</a></strong>: Contribute guides and tips</li>
+<li><strong><a href="https://github.com/tallyhubpro/Tallyhub/issues">Issue Tracker</a></strong>: Report bugs and request features</li>
+</ul>
+<h3 id="professional-support">Professional Support<a class="headerlink" href="#professional-support" title="Permanent link">&para;</a></h3>
+<p>For commercial installations:
+- <strong>Training Sessions</strong>: Remote or on-site training available
+- <strong>Custom Development</strong>: Feature development for specific needs
+- <strong>Priority Support</strong>: Faster response times for critical issues</p>
+<hr />
+<h2 id="success">✅ Success!<a class="headerlink" href="#success" title="Permanent link">&para;</a></h2>
+<p>You now have a fully functional professional tally light system! Your setup should provide:</p>
+<ul>
+<li><strong>Real-time tally updates</strong> synchronized with your video mixer</li>
+<li><strong>Professional reliability</strong> suitable for live production</li>
+<li><strong>Scalable architecture</strong> that grows with your needs  </li>
+<li><strong>Cost-effective operation</strong> at a fraction of commercial systems</li>
+</ul>
+<p><strong>Questions?</strong> Check our <strong><a href="../../troubleshooting/">troubleshooting guide</a></strong> or <strong><a href="https://github.com/tallyhubpro/Tallyhub/discussions">ask the community</a></strong> for help.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Tally Hub Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/tallyhubpro/Tallyhub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/tallyhubpro" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
+      
+    
+  </body>
+</html>
