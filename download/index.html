@@ -541,7 +541,7 @@
           <li class="md-nav__item">
   <a href="#automated-setup-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      Automated Setup (Recommended)
+      Desktop Applications (Recommended)
     </span>
   </a>
   
@@ -550,7 +550,7 @@
           <li class="md-nav__item">
   <a href="#manual-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Manual Installation
+      Server Installation (Advanced Users)
     </span>
   </a>
   
@@ -1290,7 +1290,7 @@
           <li class="md-nav__item">
   <a href="#automated-setup-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      Automated Setup (Recommended)
+      Desktop Applications (Recommended)
     </span>
   </a>
   
@@ -1299,7 +1299,7 @@
           <li class="md-nav__item">
   <a href="#manual-installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Manual Installation
+      Server Installation (Advanced Users)
     </span>
   </a>
   
@@ -1610,56 +1610,77 @@
 </ul>
 </div>
 <h2 id="quick-installation">🚀 <strong>Quick Installation</strong><a class="headerlink" href="#quick-installation" title="Permanent link">&para;</a></h2>
-<h3 id="automated-setup-recommended">Automated Setup (Recommended)<a class="headerlink" href="#automated-setup-recommended" title="Permanent link">&para;</a></h3>
-<p>The easiest way to get started is with our automated setup:</p>
+<h3 id="automated-setup-recommended">Desktop Applications (Recommended)<a class="headerlink" href="#automated-setup-recommended" title="Permanent link">&para;</a></h3>
+<p>The easiest way to get started is with our desktop applications:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS</label><label for="__tabbed_1_3">Linux</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li><strong>Download</strong> the Windows package above</li>
-<li><strong>Extract</strong> the ZIP file to your desired location</li>
-<li><strong>Run</strong> <code>Start Tally Hub.bat</code></li>
-<li><strong>Wait</strong> for automatic dependency installation</li>
-<li><strong>Open</strong> http://localhost:3000/admin.html in your browser</li>
+<li><strong>Download</strong> <code>TallyHub-Setup-1.0.0.exe</code> from the downloads above</li>
+<li><strong>Run</strong> the installer as Administrator</li>
+<li><strong>Follow</strong> the installation wizard</li>
+<li><strong>Launch</strong> TallyHub from the Start Menu or Desktop shortcut</li>
+<li><strong>Access</strong> the admin panel at http://localhost:3000/admin.html</li>
 </ol>
+<p><strong>Alternative Options:</strong></p>
+<ul>
+<li><strong>Portable:</strong> Download <code>TallyHub-Portable-1.0.0.exe</code> - no installation required</li>
+<li><strong>ZIP Archive:</strong> Download <code>TallyHub-1.0.0-win.zip</code> and extract manually</li>
+</ul>
 </div>
 <div class="tabbed-block">
 <ol>
-<li><strong>Download</strong> the macOS package above</li>
-<li><strong>Extract</strong> the tar.gz file to your desired location</li>
-<li><strong>Run</strong> <code>Start Tally Hub.command</code></li>
-<li><strong>Allow</strong> execution when prompted by security settings</li>
-<li><strong>Open</strong> http://localhost:3000/admin.html in your browser</li>
+<li><strong>Download</strong> the appropriate DMG for your Mac:</li>
+<ul>
+<li><strong>Intel Macs:</strong> <code>TallyHub-1.0.0.dmg</code></li>
+<li><strong>Apple Silicon (M1/M2/M3):</strong> <code>TallyHub-1.0.0-arm64.dmg</code></li>
+</ul>
+<li><strong>Double-click</strong> the DMG file to mount it</li>
+<li><strong>Drag</strong> TallyHub.app to your Applications folder</li>
+<li><strong>Launch</strong> TallyHub from Applications or Launchpad</li>
+<li><strong>Allow</strong> the app to run when prompted by macOS security</li>
+<li><strong>Access</strong> the admin panel at http://localhost:3000/admin.html</li>
 </ol>
+<p><strong>Note:</strong> If macOS blocks the app, go to System Preferences → Security & Privacy → General and click "Open Anyway"</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Download and extract</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-Setup-1.0.0.exe
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>tally-hub-linux.tar.gz
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w"> </span>Tallyhub
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Make executable and run</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>chmod<span class="w"> </span>+x<span class="w"> </span><span class="s2">&quot;Start Tally Hub.command&quot;</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>./Start<span class="se">\ </span>Tally<span class="se">\ </span>Hub.command
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Download the server package</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>wget<span class="w"> </span>https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-Server-v1.0.0.tar.gz
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Extract and install</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>TallyHub-Server-v1.0.0.tar.gz
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">cd</span><span class="w"> </span>Tallyhub
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>npm<span class="w"> </span>install
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Build and start</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>npm<span class="w"> </span>start
 </code></pre></div>
+<p><strong>Access:</strong> Open http://localhost:3000/admin.html in your browser</p>
 </div>
 </div>
 </div>
-<h3 id="manual-installation">Manual Installation<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h3>
-<p>For advanced users who prefer manual control:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Clone the repository</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tallyhubpro/Tallyhub.git
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>Tallyhub
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Install dependencies</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>npm<span class="w"> </span>install
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Build the project</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+<h3 id="manual-installation">Server Installation (Advanced Users)<a class="headerlink" href="#manual-installation" title="Permanent link">&para;</a></h3>
+<p>For servers, custom deployments, or developers who prefer manual control:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Option 1: Download release package (Recommended)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>wget<span class="w"> </span>https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-Server-v1.0.0.tar.gz
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>tar<span class="w"> </span>-xzf<span class="w"> </span>TallyHub-Server-v1.0.0.tar.gz
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">cd</span><span class="w"> </span>Tallyhub
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Install dependencies and start</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>npm<span class="w"> </span>install
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>npm<span class="w"> </span>start
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Start the server</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>npm<span class="w"> </span>start
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Option 2: Clone from source (For developers)</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tallyhubpro/Tallyhub.git
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="nb">cd</span><span class="w"> </span>Tallyhub
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>npm<span class="w"> </span>install
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>npm<span class="w"> </span>run<span class="w"> </span>build
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>npm<span class="w"> </span>start
 </code></pre></div>
+<p><strong>Requirements:</strong> Node.js 16+, npm, Chrome-based browser for firmware flashing</p>
+<p><strong>Access:</strong> Open http://localhost:3000/admin.html in your browser</p>
 <h2 id="firmware-downloads">📱 <strong>Firmware Downloads</strong><a class="headerlink" href="#firmware-downloads" title="Permanent link">&para;</a></h2>
 <p>Pre-compiled firmware for supported hardware devices:</p>
 <h3 id="esp32-1732s019">ESP32-1732S019<a class="headerlink" href="#esp32-1732s019" title="Permanent link">&para;</a></h3>
