@@ -48,7 +48,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "TallyHub Pro - Professional Tally Light System",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
