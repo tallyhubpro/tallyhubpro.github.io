@@ -59,16 +59,6 @@ export const metadata: Metadata = {
       "Professional tally light system for modern video production. Cost-effective, open-source tally lights for OBS Studio, vMix, ATEM, and more.",
     images: ["https://tallyhub.pro/og-image.png"],
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", sizes: "512x512", type: "image/png" },
-    ],
-    shortcut: ["/favicon.ico"],
-    apple: [
-      { url: "/icon.png", sizes: "180x180", type: "image/png" },
-    ],
-  },
   robots: {
     index: true,
     follow: true,
