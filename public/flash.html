@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Firmware - TallyHub Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        header {
+            border-bottom: 1px solid #333;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem;
+        }
+
+        .header-content a {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        .header-content a:hover {
+            color: #93c5fd;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #9ca3af;
+            margin-bottom: 3rem;
+        }
+
+        .warning-box {
+            background: rgba(217, 119, 6, 0.2);
+            border: 1px solid rgba(217, 119, 6, 0.3);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .warning-box h3 {
+            color: #fbbf24;
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .warning-box ul {
+            list-style: none;
+        }
+
+        .warning-box li {
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid #4b5563;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .card-primary {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+            border: 2px solid rgba(239, 68, 68, 0.4);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #d1d5db;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #ef4444;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: #dc2626;
+        }
+
+        .button-secondary {
+            background: #4b5563;
+        }
+
+        .button-secondary:hover {
+            background: #5a6573;
+        }
+
+        .button-block {
+            display: block;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+
+        .space-y {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .device-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .device-btn {
+            padding: 1rem;
+            background: rgba(31, 41, 55, 0.5);
+            border: 2px solid #4b5563;
+            border-radius: 0.375rem;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .device-btn:hover {
+            border-color: #60a5fa;
+            background: rgba(31, 41, 55, 0.8);
+        }
+
+        .device-btn.active {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            border-color: #ef4444;
+        }
+
+        .device-info {
+            background: rgba(31, 41, 55, 0.3);
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0.375rem;
+            display: none;
+        }
+
+        .device-info.active {
+            display: block;
+        }
+
+        .device-info h4 {
+            color: #ef4444;
+            margin-bottom: 0.5rem;
+        }
+
+        .device-info p {
+            color: #d1d5db;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .firmware-options {
+            background: rgba(31, 41, 55, 0.3);
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+            margin: 1.5rem 0;
+        }
+
+        .firmware-options h4 {
+            margin-bottom: 1rem;
+        }
+
+        .option-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .option-group label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+        }
+
+        .option-group input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+
+        .option-group input[type="file"] {
+            margin-top: 0.5rem;
+        }
+
+        .progress-container {
+            background: rgba(31, 41, 55, 0.3);
+            padding: 1.5rem;
+            border-radius: 0.375rem;
+            margin: 1.5rem 0;
+            display: none;
+        }
+
+        .progress-container.active {
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0.375rem;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #dc2626, #ef4444);
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-message {
+            padding: 1rem;
+            border-radius: 0.375rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .status-message.active {
+            display: block;
+        }
+
+        .status-info {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid #3b82f6;
+            color: #93c5fd;
+        }
+
+        .status-success {
+            background: rgba(34, 197, 94, 0.2);
+            border: 1px solid #22c55e;
+            color: #86efac;
+        }
+
+        .status-error {
+            background: rgba(220, 38, 38, 0.2);
+            border: 1px solid #dc2626;
+            color: #fca5a5;
+        }
+
+        .status-warning {
+            background: rgba(217, 119, 6, 0.2);
+            border: 1px solid #d97706;
+            color: #fed7aa;
+        }
+
+        .list-disc {
+            list-style: disc;
+            padding-left: 1.5rem;
+        }
+
+        .list-decimal {
+            list-style: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .list-disc li, .list-decimal li {
+            margin-bottom: 0.5rem;
+            color: #d1d5db;
+        }
+
+        .firmware-card {
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid #4b5563;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .firmware-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .firmware-card p {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        .firmware-card ul {
+            list-style: none;
+            font-size: 0.875rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .firmware-card li {
+            margin-bottom: 0.25rem;
+        }
+
+        .filename {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            background: #000;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            margin-bottom: 1rem;
+        }
+
+        .troubleshoot-item {
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 0.375rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .troubleshoot-item h3 {
+            color: #f87171;
+            margin-bottom: 0.75rem;
+        }
+
+        .troubleshoot-item ul {
+            list-style: none;
+            font-size: 0.875rem;
+            color: #d1d5db;
+        }
+
+        .troubleshoot-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .drivers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .driver-link {
+            display: block;
+            background: #4b5563;
+            border-radius: 0.375rem;
+            padding: 1rem;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .driver-link:hover {
+            background: #5a6573;
+        }
+
+        .driver-link h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .driver-link p {
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        .gradient-box {
+            background: linear-gradient(to right, rgba(239, 68, 68, 0.2), transparent);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gradient-box ol {
+            list-style: decimal;
+            padding-left: 1.5rem;
+        }
+
+        .gradient-box li {
+            margin-bottom: 0.75rem;
+            color: #d1d5db;
+        }
+
+        .next-steps-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #ef4444;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .next-steps-button:hover {
+            background: #dc2626;
+        }
+
+        .drivers-section {
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .flasher-section {
+            background: rgba(31, 41, 55, 0.3);
+            padding: 2rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .integrated-flasher {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .device-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/">← TallyHub Pro</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Flash Firmware</h1>
+        <p class="subtitle">Flash your ESP32 tally devices directly from your browser</p>
+
+        <!-- Warning Box -->
+        <div class="warning-box">
+            <h3>⚠️ Before You Start</h3>
+            <ul>
+                <li>• Use a high-quality USB cable (data cable, not just charging)</li>
+                <li>• Close any other apps that might be using the serial port</li>
+                <li>• Use Google Chrome or Microsoft Edge (WebSerial required)</li>
+                <li>• Make sure your device is powered off before connecting</li>
+            </ul>
+        </div>
+
+        <!-- Methods -->
+        <div class="grid grid-2">
+            <!-- Method 1: Online Web Flasher -->
+            <div class="card card-primary">
+                <div class="card-icon">🌐</div>
+                <h2>Option 1: Online Web Flasher</h2>
+                <p>Flash directly from your browser - no downloads required. Uses Web Serial API to flash firmware directly from GitHub.</p>
+                <p style="font-size: 0.875rem; color: #9ca3af; margin-bottom: 1.5rem;">Requires Chrome or Edge browser (Web Serial API)</p>
+
+                <!-- Integrated Flasher -->
+                <div class="integrated-flasher">
+                    <!-- Device Selection -->
+                    <div>
+                        <h3 style="margin-bottom: 1rem; font-size: 1rem;">Select Your Device</h3>
+                        <div class="device-selector">
+                            <button class="device-btn" onclick="window.selectDevice(event, 'M5Stick_Tally')">M5Stick Tally</button>
+                            <button class="device-btn" onclick="window.selectDevice(event, 'M5Stick_Tally_Plus2')">M5Stick Plus2</button>
+                            <button class="device-btn" onclick="window.selectDevice(event, 'ESP32-1732S019')">ESP32-1732S019</button>
+                        </div>
+                    </div>
+
+                    <!-- Device Instructions -->
+                    <div id="M5Stick_Tally-info" class="device-info">
+                        <h4>M5Stick Tally</h4>
+                        <p>For M5Stack M5Stick-C devices</p>
+                        <p><strong>Features:</strong> 0.96 inch display • Built-in battery • Compact size</p>
+                        <p><strong>How to flash:</strong> Hold HOME button while connecting USB cable, then click "Flash" button below.</p>
+                    </div>
+
+                    <div id="M5Stick_Tally_Plus2-info" class="device-info">
+                        <h4>M5Stick Plus2</h4>
+                        <p>For M5Stack M5Stick-C Plus2</p>
+                        <p><strong>Features:</strong> 1.14 inch display • Larger battery • USB-C</p>
+                        <p><strong>How to flash:</strong> Hold HOME button while connecting USB cable, then click "Flash" button below.</p>
+                    </div>
+
+                    <div id="ESP32-1732S019-info" class="device-info">
+                        <h4>ESP32-1732S019</h4>
+                        <p>For ESP32-1732S019 touchscreen</p>
+                        <p><strong>Features:</strong> 2.4 inch display • Touch support • Very affordable</p>
+                        <p><strong>How to flash:</strong> Hold BOOT button while connecting USB cable, then click "Flash" button below.</p>
+                    </div>
+
+                    <!-- Firmware Options -->
+                    <div class="firmware-options">
+                        <h4 style="font-size: 0.9rem;">Firmware Source</h4>
+                        <div class="option-group">
+                            <label>
+                                <input type="radio" name="firmware-source" value="github" checked onchange="window.updateFirmwareSource()">
+                                <span>Download from GitHub (Recommended)</span>
+                            </label>
+                            <div style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                <label style="font-size: 0.875rem;">Branch:
+                                    <input type="text" id="github-branch" value="main" placeholder="main" style="padding: 0.25rem; margin-left: 0.5rem; background: #333; border: 1px solid #555; color: white; border-radius: 0.25rem;">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <label>
+                                <input type="radio" name="firmware-source" value="custom" onchange="window.updateFirmwareSource()">
+                                <span>Upload custom .bin file</span>
+                            </label>
+                            <input type="file" id="custom-file" accept=".bin" style="margin-left: 1.5rem; margin-top: 0.5rem; display: none;">
+                        </div>
+                    </div>
+
+                    <!-- Flash Button -->
+                    <button onclick="window.flashFirmware()" class="button button-block" style="padding: 1rem; font-size: 1rem; margin-top: 1.5rem;">
+                        ⚡ Flash Firmware
+                    </button>
+
+                    <!-- Progress -->
+                    <div class="progress-container" id="progress-container">
+                        <div style="margin-bottom: 1rem;">
+                            <strong>Flashing Progress:</strong>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill" style="width: 0%">0%</div>
+                        </div>
+                        <div id="status-text" style="font-size: 0.875rem; color: #9ca3af;">Initializing...</div>
+                    </div>
+
+                    <!-- Status Messages -->
+                    <div id="status-message" class="status-message"></div>
+                </div>
+            </div>
+
+            <!-- Method 2: Web Flasher -->
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <h2>Option 2: ESPHome Web Flasher</h2>
+                <p>Use ESPHome's proven web flasher for manual firmware installation.</p>
+                <ol class="list-decimal">
+                    <li>Use Chrome or Edge browser</li>
+                    <li>Download firmware files from GitHub</li>
+                    <li>Open ESPHome flasher tool</li>
+                    <li>Connect device and select port</li>
+                    <li>Upload firmware and flash</li>
+                </ol>
+                <div class="space-y" style="margin-top: 1.5rem;">
+                    <a href="https://web.esphome.io/" target="_blank" rel="noopener noreferrer" class="button button-secondary button-block">Open ESPHome Web Flasher</a>
+                    <a href="https://github.com/tallyhubpro/Tallyhub/releases/latest" class="button button-secondary button-block">Download Firmware Files</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Firmware Options Section -->
+        <h2>Available Firmware</h2>
+        <div class="grid grid-3">
+            <div class="firmware-card">
+                <h3>M5Stick Tally</h3>
+                <p>For M5Stack M5Stick-C devices</p>
+                <ul>
+                    <li>• 0.96 inch display</li>
+                    <li>• Built-in battery</li>
+                    <li>• Compact size</li>
+                </ul>
+                <div class="filename">M5Stick_Tally.bin</div>
+                <a href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/M5Stick_Tally.bin" class="button button-block">Download Firmware</a>
+            </div>
+
+            <div class="firmware-card">
+                <h3>M5Stick Plus2</h3>
+                <p>For M5Stack M5Stick-C Plus2</p>
+                <ul>
+                    <li>• 1.14 inch display</li>
+                    <li>• Larger battery</li>
+                    <li>• USB-C</li>
+                </ul>
+                <div class="filename">M5Stick_Tally_Plus2.bin</div>
+                <a href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/M5Stick_Tally_Plus2.bin" class="button button-block">Download Firmware</a>
+            </div>
+
+            <div class="firmware-card">
+                <h3>ESP32-1732S019</h3>
+                <p>For ESP32-1732S019 touchscreen</p>
+                <ul>
+                    <li>• 2.4 inch display</li>
+                    <li>• Touch support</li>
+                    <li>• Very affordable</li>
+                </ul>
+                <div class="filename">ESP32-1732S019.bin</div>
+                <a href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/ESP32-1732S019.bin" class="button button-block">Download Firmware</a>
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <h2>Troubleshooting</h2>
+        <div class="troubleshoot-item">
+            <h3>Device not detected</h3>
+            <ul class="list-disc">
+                <li>Install USB drivers (CP210x or CH340)</li>
+                <li>Try a different USB cable</li>
+                <li>Check if another app is using the port</li>
+                <li>Restart your computer</li>
+            </ul>
+        </div>
+
+        <div class="troubleshoot-item">
+            <h3>Flash failed / timeout</h3>
+            <ul class="list-disc">
+                <li>Hold the BOOT button while connecting USB</li>
+                <li>Try lowering the baud rate to 115200</li>
+                <li>Ensure good USB connection</li>
+                <li>Use a powered USB hub</li>
+            </ul>
+        </div>
+
+        <div class="troubleshoot-item">
+            <h3>Device won't boot after flashing</h3>
+            <ul class="list-disc">
+                <li>Verify you downloaded the correct firmware</li>
+                <li>Try flashing again</li>
+                <li>Erase flash first, then reflash</li>
+                <li>Check if device is getting power</li>
+            </ul>
+        </div>
+
+        <div class="troubleshoot-item">
+            <h3>Browser doesn't support WebSerial</h3>
+            <ul class="list-disc">
+                <li>Use Google Chrome or Microsoft Edge</li>
+                <li>Update browser to latest version</li>
+                <li>Enable experimental features in chrome://flags</li>
+                <li>Use TallyHub desktop app instead</li>
+            </ul>
+        </div>
+
+        <!-- Drivers -->
+        <div class="drivers-section">
+            <h3>USB Drivers</h3>
+            <p style="color: #d1d5db; margin: 1rem 0;">If your device isn't detected, you may need to install USB drivers:</p>
+            <div class="drivers-grid">
+                <a href="https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers" target="_blank" rel="noopener noreferrer" class="driver-link">
+                    <h4>CP210x Driver</h4>
+                    <p>For most M5Stack devices</p>
+                </a>
+                <a href="https://sparks.gogo.co.nz/ch340.html" target="_blank" rel="noopener noreferrer" class="driver-link">
+                    <h4>CH340 Driver</h4>
+                    <p>For generic ESP32 boards</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- After Flashing -->
+        <div class="gradient-box">
+            <h2 style="margin-top: 0;">After Flashing</h2>
+            <p style="color: #d1d5db; margin-bottom: 1.5rem;">Once firmware is flashed successfully, configure WiFi on your device:</p>
+            <ol>
+                <li>Device boots into AP mode (creates WiFi hotspot)</li>
+                <li>Connect to device WiFi (e.g., "TallyHub-XXXX")</li>
+                <li>Browser opens configuration page automatically</li>
+                <li>Enter your WiFi credentials and TallyHub server IP</li>
+                <li>Device restarts and connects to your network</li>
+            </ol>
+            <a href="/getting-started" class="next-steps-button">Continue to Setup Guide →</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { ESPLoader, Transport } from 'https://unpkg.com/esptool-js@0.4.6/bundle.js';
+
+        const deviceConfigs = {
+            'M5Stick_Tally': {
+                flashSize: '4MB',
+                instruction: 'Hold HOME button while connecting USB cable'
+            },
+            'M5Stick_Tally_Plus2': {
+                flashSize: '4MB',
+                instruction: 'Hold HOME button while connecting USB cable'
+            },
+            'ESP32-1732S019': {
+                flashSize: '8MB',
+                instruction: 'Hold BOOT button while connecting USB cable'
+            }
+        };
+
+        let selectedDevice = null;
+        let esploader = null;
+        let transport = null;
+
+        window.selectDevice = function(event, device) {
+            selectedDevice = device;
+            const config = deviceConfigs[device];
+            
+            // Update button states
+            document.querySelectorAll('.device-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Show info
+            document.querySelectorAll('.device-info').forEach(info => {
+                info.classList.remove('active');
+            });
+            const infoEl = document.getElementById(device + '-info');
+            if (infoEl) infoEl.classList.add('active');
+
+            // Clear messages
+            const statusMsg = document.getElementById('status-message');
+            statusMsg.classList.remove('active');
+        };
+
+        window.updateFirmwareSource = function() {
+            const customFile = document.getElementById('custom-file');
+            const source = document.querySelector('input[name="firmware-source"]:checked').value;
+            
+            if (source === 'custom') {
+                customFile.style.display = 'block';
+            } else {
+                customFile.style.display = 'none';
+                customFile.value = '';
+            }
+        };
+
+        window.flashFirmware = async function() {
+            if (!selectedDevice) {
+                showStatus('Please select a device first', 'error');
+                return;
+            }
+
+            const config = deviceConfigs[selectedDevice];
+            const source = document.querySelector('input[name="firmware-source"]:checked').value;
+
+            try {
+                showStatus('Opening serial port...', 'info');
+                updateProgress(0);
+                document.getElementById('progress-container').classList.add('active');
+
+                const port = await navigator.serial.requestPort();
+                transport = new Transport(port, true);
+
+                showStatus('Connecting to device...', 'info');
+                updateProgress(10);
+
+                esploader = new ESPLoader({
+                    transport,
+                    baudrate: 115200,
+                    romBaudrate: 115200
+                });
+
+                const chip = await esploader.main();
+                showStatus('Device detected: ' + chip, 'info');
+                updateProgress(20);
+
+                let binaryString = '';
+
+                if (source === 'github') {
+                    const branch = document.getElementById('github-branch').value || 'main';
+                    const githubUrl = `https://raw.githubusercontent.com/tallyhubpro/Tallyhub/${branch}/firmware/${selectedDevice}/${selectedDevice}.bin`;
+                    
+                    showStatus('Downloading firmware from GitHub...', 'info');
+                    updateProgress(25);
+
+                    const response = await fetch(githubUrl);
+                    if (!response.ok) throw new Error(`GitHub download failed: ${response.statusText}`);
+                    
+                    const arrayBuffer = await response.arrayBuffer();
+                    binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
+                    updateProgress(30);
+                } else {
+                    const fileInput = document.getElementById('custom-file');
+                    if (!fileInput.files[0]) {
+                        showStatus('Please select a firmware file', 'error');
+                        document.getElementById('progress-container').classList.remove('active');
+                        return;
+                    }
+
+                    showStatus('Reading firmware file...', 'info');
+                    const file = fileInput.files[0];
+                    const arrayBuffer = await file.arrayBuffer();
+                    binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
+                    updateProgress(30);
+                }
+
+                showStatus('Erasing flash...', 'info');
+                updateProgress(35);
+
+                showStatus('Writing firmware...', 'info');
+
+                await esploader.writeFlash({
+                    fileArray: [{ data: binaryString, address: 0x0 }],
+                    flashSize: config.flashSize,
+                    flashMode: 'dio',
+                    flashFreq: '40m',
+                    flashSizeDetected: config.flashSize,
+                    compress: true,
+                    waitForFinishTimeout: 15000,
+                    reportProgress: (fileIndex, written, total) => {
+                        const progress = 30 + (written / total) * 65;
+                        updateProgress(progress);
+                        document.getElementById('status-text').textContent = `Writing: ${Math.round(progress)}%`;
+                    }
+                });
+
+                updateProgress(100);
+                showStatus('✓ Firmware flashed successfully! Device will restart in a few seconds.', 'success');
+
+                setTimeout(() => {
+                    try {
+                        port.close();
+                    } catch (e) {
+                        console.log('Port already closed');
+                    }
+                }, 2000);
+
+            } catch (error) {
+                showStatus('Error: ' + error.message, 'error');
+                console.error(error);
+            } finally {
+                document.getElementById('progress-container').classList.remove('active');
+            }
+        };
+
+        function updateProgress(percent) {
+            const fill = document.getElementById('progress-fill');
+            fill.style.width = percent + '%';
+            fill.textContent = Math.round(percent) + '%';
+        }
+
+        function showStatus(message, type) {
+            const statusMsg = document.getElementById('status-message');
+            statusMsg.textContent = message;
+            statusMsg.className = 'status-message active status-' + type;
+        }
+
+        // Make functions available globally
+        window.updateProgress = updateProgress;
+        window.showStatus = showStatus;
+    </script>
+</body>
+</html>
