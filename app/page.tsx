@@ -105,7 +105,7 @@ export default function Home() {
             />
             <HardwareCard 
               name="ESP32-1732S019"
-              description="2.4\" touchscreen display"
+              description="2.4 inch touchscreen display"
               price="~$12"
             />
           </div>
