@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <div className="min-h-screen brand-gradient text-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-transparent"></div>
@@ -11,6 +11,11 @@ export default function Home() {
             <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
               TallyHub Pro
             </h1>
+            <div className="flex justify-center mb-6">
+              <span className="px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold">
+                v1.2.0 Latest Release
+              </span>
+            </div>
             <p className="text-2xl text-gray-300 mb-8">
               Professional Tally Light System for Modern Video Production
             </p>
@@ -19,22 +24,56 @@ export default function Home() {
             </p>
             
             {/* Download Buttons */}
+
+                  {/* Top Quick Links */}
+                  <div className="flex flex-wrap justify-center gap-4 mb-10">
+                    <Link 
+                      href="/browser-tally"
+                      className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                      📱 Browser Tally
+                    </Link>
+                    <Link 
+                      href="/installation"
+                      className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                      📦 Installation
+                    </Link>
+                    <Link 
+                      href="/flash"
+                      className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                      ⚡ Flash Firmware
+                    </Link>
+                    <Link 
+                      href="/docker"
+                      className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                      🐳 Docker/Pi
+                    </Link>
+                    <Link 
+                      href="/developers"
+                      className="px-6 py-3 bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors"
+                    >
+                      👨‍💻 Developers
+                    </Link>
+                  </div>
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               <a 
                 href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-1.2.0-arm64.dmg"
-                className="px-8 py-4 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-lg transition-colors"
+                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
               >
                 Download for macOS (Apple Silicon)
               </a>
               <a 
                 href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-1.2.0.dmg"
-                className="px-8 py-4 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-lg transition-colors"
+                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
               >
                 Download for macOS (Intel)
               </a>
               <a 
                 href="https://github.com/tallyhubpro/Tallyhub/releases/latest"
-                className="px-8 py-4 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold text-lg transition-colors"
+                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
               >
                 Download for Windows
               </a>
@@ -61,7 +100,7 @@ export default function Home() {
             />
             <FeatureCard 
               title="Cost-Effective Hardware"
-              description="Use affordable ESP32 devices like M5Stick or custom displays"
+              description="Use affordable ESP32 devices, phones, tablets, or any web browser"
               icon="💰"
             />
             <FeatureCard 
@@ -92,7 +131,12 @@ export default function Home() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Supported Hardware</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <HardwareCard 
+              name="Phone/Tablet"
+              description="Any device with a browser"
+              price="Free"
+            />
             <HardwareCard 
               name="M5Stick Tally"
               description="Compact and affordable"
@@ -121,7 +165,7 @@ export default function Home() {
           </p>
           <Link 
             href="/getting-started"
-            className="inline-block px-8 py-4 bg-red-600 hover:bg-red-700 rounded-lg font-semibold text-lg transition-colors"
+            className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
           >
             View Setup Guide
           </Link>
@@ -131,10 +175,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-gray-800 py-8">
         <div className="container mx-auto px-4 text-center text-gray-400">
-          <p>© 2026 TallyHub Pro. Open Source Project.</p>
-          <div className="mt-4 flex justify-center gap-6">
+          <p className="mb-2">© 2026 TallyHub Pro. Open Source Project.</p>
+          <p className="text-sm mb-4">Licensed under MIT • <a href="mailto:hello@tallyhub.pro" className="hover:text-white">hello@tallyhub.pro</a></p>
+          <div className="mt-4 flex flex-wrap justify-center gap-6">
             <a href="https://github.com/tallyhubpro/Tallyhub" className="hover:text-white">GitHub</a>
-            <a href="/documentation" className="hover:text-white">Documentation</a>
+            <Link href="/installation" className="hover:text-white">Installation</Link>
+            <Link href="/documentation" className="hover:text-white">Documentation</Link>
+            <Link href="/docker" className="hover:text-white">Docker</Link>
+            <Link href="/developers" className="hover:text-white">Developers</Link>
             <a href="https://github.com/tallyhubpro/Tallyhub/issues" className="hover:text-white">Support</a>
           </div>
         </div>

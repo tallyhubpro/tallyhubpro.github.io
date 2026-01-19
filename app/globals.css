@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --brand-bg-start: #667eea; /* indigo-400 */
+  --brand-bg-end: #764ba2;   /* purple-500 */
+  --brand-primary: #3b82f6;  /* blue-500 */
+  --brand-primary-hover: #2563eb; /* blue-600 */
+  --brand-danger: #ef4444;  /* red-500 */
 }
 
 @theme inline {
@@ -24,3 +29,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Brand helpers */
+.brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-bg-start) 0%, var(--brand-bg-end) 100%);
+}
+
+.btn-primary {
+  background-color: var(--brand-primary);
+  color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 0.75rem 1.5rem; /* px-6 py-3 */
+  font-weight: 600;
+}
+.btn-primary:hover { background-color: var(--brand-primary-hover); }
