@@ -573,16 +573,8 @@
                         <div class="option-group">
                             <label>
                                 <input type="radio" name="firmware-source" value="github" checked onchange="window.updateFirmwareSource()">
-                                <span>Download from GitHub (Recommended)</span>
-                            </label>
-                            <div style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                <label style="font-size: 0.875rem;">Branch:
-                                    <input type="text" id="github-branch" value="main" placeholder="main" style="padding: 0.25rem; margin-left: 0.5rem; background: #333; border: 1px solid #555; color: white; border-radius: 0.25rem;">
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="option-group">
+                            <span>Download from GitHub Releases (Recommended)</span>
+                        </label>
                             <label>
                                 <input type="radio" name="firmware-source" value="custom" onchange="window.updateFirmwareSource()">
                                 <span>Upload custom .bin file</span>
@@ -833,8 +825,8 @@
                 let binaryString = '';
 
                 if (source === 'github') {
-                    const branch = document.getElementById('github-branch').value || 'main';
-                    const githubUrl = `https://raw.githubusercontent.com/tallyhubpro/Tallyhub/${branch}/firmware/${selectedDevice}/${selectedDevice}.bin`;
+                    // Use GitHub Releases instead of raw repository files
+                    const githubUrl = `https://github.com/tallyhubpro/Tallyhub/releases/latest/download/${selectedDevice}.bin`;
                     
                     showStatus('Downloading firmware from GitHub...', 'info');
                     updateProgress(25);
