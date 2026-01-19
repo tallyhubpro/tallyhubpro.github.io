@@ -827,15 +827,13 @@
                 let binaryString = '';
 
                 if (source === 'github') {
-                    // Use CORS proxy to download from GitHub Releases
-                    const githubUrl = `https://github.com/tallyhubpro/Tallyhub/releases/latest/download/${selectedDevice}.bin`;
-                    const corsProxy = 'https://corsproxy.io/?';
-                    const proxyUrl = corsProxy + encodeURIComponent(githubUrl);
+                    // Use jsDelivr CDN which has CORS enabled for GitHub releases
+                    const cdnUrl = `https://cdn.jsdelivr.net/gh/tallyhubpro/Tallyhub@latest/firmware/${selectedDevice}/${selectedDevice}.bin`;
                     
-                    showStatus('Downloading firmware from GitHub...', 'info');
+                    showStatus('Downloading firmware from CDN...', 'info');
                     updateProgress(25);
 
-                    const response = await fetch(proxyUrl);
+                    const response = await fetch(cdnUrl);
                     if (!response.ok) throw new Error(`Download failed: ${response.statusText}`);
                     
                     const arrayBuffer = await response.arrayBuffer();
