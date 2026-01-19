@@ -741,6 +741,20 @@
     <script type="module">
         import { ESPLoader, Transport } from 'https://unpkg.com/esptool-js@0.4.6/bundle.js';
 
+        // Convert ArrayBuffer to binary string in chunks to avoid stack overflow
+        function arrayBufferToBinaryString(buffer) {
+            const bytes = new Uint8Array(buffer);
+            const chunkSize = 0x8000; // 32KB chunks
+            let result = '';
+            
+            for (let i = 0; i < bytes.length; i += chunkSize) {
+                const chunk = bytes.subarray(i, Math.min(i + chunkSize, bytes.length));
+                result += String.fromCharCode.apply(null, chunk);
+            }
+            
+            return result;
+        }
+
         const deviceConfigs = {
             'M5Stick_Tally': {
                 flashSize: '4MB',
@@ -837,7 +851,7 @@
                     if (!response.ok) throw new Error(`Download failed: ${response.statusText}`);
                     
                     const arrayBuffer = await response.arrayBuffer();
-                    binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
+                    binaryString = arrayBufferToBinaryString(arrayBuffer);
                     updateProgress(30);
                 } else {
                     const fileInput = document.getElementById('custom-file');
@@ -850,7 +864,7 @@
                     showStatus('Reading firmware file...', 'info');
                     const file = fileInput.files[0];
                     const arrayBuffer = await file.arrayBuffer();
-                    binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
+                    binaryString = arrayBufferToBinaryString(arrayBuffer);
                     updateProgress(30);
                 }
 
