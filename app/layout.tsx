@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://tallyhub.pro/og-image.png",
+        url: "https://tallyhub.pro/og-image-v2.png",
         width: 1200,
         height: 630,
         alt: "TallyHub Pro - Professional Tally Light System",
-        type: "image/jpeg",
+        type: "image/png",
       },
     ],
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "TallyHub Pro - Professional Tally Light System",
     description:
       "Professional tally light system for modern video production. Cost-effective, open-source tally lights for OBS Studio, vMix, ATEM, and more.",
-    images: ["https://tallyhub.pro/og-image.png"],
+    images: ["https://tallyhub.pro/og-image-v2.png"],
   },
   robots: {
     index: true,
