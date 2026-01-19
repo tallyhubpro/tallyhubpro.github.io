@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tallyhubpro.github.io"),
+  metadataBase: new URL("https://tallyhub.pro"),
   title: {
     default: "TallyHub Pro - Professional Tally Light System",
     template: "%s | TallyHub Pro",
@@ -32,19 +32,19 @@ export const metadata: Metadata = {
     "open source",
   ],
   alternates: {
-    canonical: "https://tallyhubpro.github.io",
+    canonical: "https://tallyhub.pro",
   },
   openGraph: {
     title: "TallyHub Pro - Professional Tally Light System",
     description:
       "Professional tally light system for modern video production. Cost-effective, open-source tally lights for OBS Studio, vMix, ATEM, and more.",
-    url: "https://tallyhubpro.github.io",
+    url: "https://tallyhub.pro",
     siteName: "TallyHub Pro",
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: "https://tallyhubpro.github.io/og-image.png",
+        url: "https://tallyhub.pro/og-image.png",
         width: 1200,
         height: 630,
         alt: "TallyHub Pro - Professional Tally Light System",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "TallyHub Pro - Professional Tally Light System",
     description:
       "Professional tally light system for modern video production. Cost-effective, open-source tally lights for OBS Studio, vMix, ATEM, and more.",
-    images: ["https://tallyhubpro.github.io/og-image.png"],
+    images: ["https://tallyhub.pro/og-image.png"],
   },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png" }],
