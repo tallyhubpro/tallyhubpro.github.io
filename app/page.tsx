@@ -62,25 +62,13 @@ export default function Home() {
                       👨‍💻 Developers
                     </Link>
                   </div>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              <a 
-                href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-1.2.0-arm64.dmg"
+            <div className="flex justify-center mb-12">
+              <Link 
+                href="/installation"
                 className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
               >
-                Download for macOS (Apple Silicon)
-              </a>
-              <a 
-                href="https://github.com/tallyhubpro/Tallyhub/releases/latest/download/TallyHub-1.2.0.dmg"
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
-              >
-                Download for macOS (Intel)
-              </a>
-              <a 
-                href="https://github.com/tallyhubpro/Tallyhub/releases/latest"
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold text-lg transition-colors"
-              >
-                Download for Windows
-              </a>
+                📦 Installation & Downloads
+              </Link>
             </div>
 
             <div className="flex justify-center gap-6 text-sm text-gray-400">

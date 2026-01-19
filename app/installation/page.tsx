@@ -19,6 +19,7 @@ export default function Installation() {
           Choose your platform and get TallyHub running in minutes
         </p>
 
+
         {/* Platform Selection */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
           <PlatformLink href="#macos" icon="🍎" name="macOS" />
