@@ -57,9 +57,7 @@ export default function BrowserTally() {
               <p className="text-gray-300 mb-3">
                 Launch the TallyHub desktop app or server, and note the IP address displayed.
               </p>
-              <CodeBlock>
-                TallyHub running at: http://192.168.1.100:3000
-              </CodeBlock>
+              <CodeBlock>TallyHub running at: http://192.168.1.100:3000</CodeBlock>
             </StepCard>
 
             <StepCard 
@@ -80,9 +78,7 @@ export default function BrowserTally() {
               <p className="text-gray-300 mb-3">
                 Type this URL in the browser's address bar:
               </p>
-              <CodeBlock>
-                http://[TALLYHUB-IP]:3000/tally
-              </CodeBlock>
+              <CodeBlock>http://[TALLYHUB-IP]:3000/tally</CodeBlock>
               <p className="text-gray-400 text-sm mt-3">
                 Replace [TALLYHUB-IP] with your TallyHub server's IP address
               </p>

@@ -60,9 +60,7 @@ export default function Installation() {
               <p className="text-gray-300 mb-4">
                 If you see "TallyHub is damaged and can't be opened", this is a macOS Gatekeeper issue. Run this command in Terminal:
               </p>
-              <CodeBlock>
-                xattr -cr /Applications/TallyHub.app
-              </CodeBlock>
+              <CodeBlock>xattr -cr /Applications/TallyHub.app</CodeBlock>
               <p className="text-gray-400 text-sm mt-4">
                 For more details, see <a href="https://github.com/tallyhubpro/Tallyhub/blob/main/MACOS_INSTALLATION.md" className="text-blue-400 hover:underline">MACOS_INSTALLATION.md</a>
               </p>
@@ -129,10 +127,8 @@ export default function Installation() {
               <div className="space-y-4">
                 <div>
                   <p className="text-gray-300 mb-2">1. Clone the repository:</p>
-                  <CodeBlock>
-                    git clone https://github.com/tallyhubpro/Tallyhub.git{'\n'}
-                    cd Tallyhub
-                  </CodeBlock>
+                  <CodeBlock>{`git clone https://github.com/tallyhubpro/Tallyhub.git
+cd Tallyhub`}</CodeBlock>
                 </div>
 
                 <div>
@@ -147,16 +143,12 @@ export default function Installation() {
 
                 <div>
                   <p className="text-gray-300 mb-2">4. Start the server:</p>
-                  <CodeBlock>
-                    NODE_ENV=production npm start
-                  </CodeBlock>
+                  <CodeBlock>NODE_ENV=production npm start</CodeBlock>
                 </div>
 
                 <div>
                   <p className="text-gray-300 mb-2">Or use the CLI launcher:</p>
-                  <CodeBlock>
-                    NODE_ENV=production npx tallyhub
-                  </CodeBlock>
+                  <CodeBlock>NODE_ENV=production npx tallyhub</CodeBlock>
                 </div>
               </div>
             </div>

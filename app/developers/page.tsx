@@ -58,10 +58,8 @@ export default function Developers() {
                   number="1"
                   title="Fork and Clone"
                   content={
-                    <CodeBlock>
-                      git clone https://github.com/YOUR_USERNAME/Tallyhub.git{'\n'}
-                      cd Tallyhub
-                    </CodeBlock>
+                    <CodeBlock>{`git clone https://github.com/YOUR_USERNAME/Tallyhub.git
+cd Tallyhub`}</CodeBlock>
                   }
                 />
                 <StepItem 
