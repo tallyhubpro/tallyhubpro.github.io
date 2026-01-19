@@ -20,7 +20,11 @@ export default function Home() {
               Professional Tally Light System for Modern Video Production
             </p>
             <p className="text-lg text-gray-400 mb-12">
-              Cost-effective, open-source tally lights for OBS Studio, vMix, ATEM, and more
+              Affordable, open-source tally lights that integrate with OBS Studio, vMix, ATEM, and more
+            </p>
+
+            <p className="text-base text-gray-300 mb-10">
+              <span className="font-semibold">What problem this solves:</span> eliminates “who’s live?” confusion so operators and talent always know when they’re on-air.
             </p>
             
             {/* Download Buttons */}
