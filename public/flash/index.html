@@ -569,20 +569,11 @@
 
                     <!-- Firmware Options -->
                     <div class="firmware-options">
-                        <h4 style="font-size: 0.9rem;">Firmware Source</h4>
-                        <div class="option-group">
-                            <label>
-                                <input type="radio" name="firmware-source" value="github" checked onchange="window.updateFirmwareSource()">
-                                <span>Download from GitHub (Recommended)</span>
-                            </label>
-                        </div>
-                        <div class="option-group">
-                            <label>
-                                <input type="radio" name="firmware-source" value="custom" onchange="window.updateFirmwareSource()">
-                                <span>Upload custom .bin file</span>
-                            </label>
-                            <input type="file" id="custom-file" accept=".bin" style="margin-left: 1.5rem; margin-top: 0.5rem; display: none;">
-                        </div>
+                        <h4 style="font-size: 0.9rem;">Select Firmware File</h4>
+                        <p style="font-size: 0.875rem; color: #9ca3af; margin-bottom: 1rem;">
+                            Click your device's download button below to get the .bin file, then select it here:
+                        </p>
+                        <input type="file" id="custom-file" accept=".bin" required style="width: 100%; padding: 0.75rem; background: #333; border: 1px solid #555; color: white; border-radius: 0.375rem; cursor: pointer;">
                     </div>
 
                     <!-- Flash Button -->
@@ -782,18 +773,6 @@
             statusMsg.classList.remove('active');
         };
 
-        window.updateFirmwareSource = function() {
-            const customFile = document.getElementById('custom-file');
-            const source = document.querySelector('input[name="firmware-source"]:checked').value;
-            
-            if (source === 'custom') {
-                customFile.style.display = 'block';
-            } else {
-                customFile.style.display = 'none';
-                customFile.value = '';
-            }
-        };
-
         window.flashFirmware = async function() {
             if (!selectedDevice) {
                 showStatus('Please select a device first', 'error');
@@ -801,7 +780,6 @@
             }
 
             const config = deviceConfigs[selectedDevice];
-            const source = document.querySelector('input[name="firmware-source"]:checked').value;
 
             try {
                 showStatus('Opening serial port...', 'info');
@@ -824,35 +802,19 @@
                 showStatus('Device detected: ' + chip, 'info');
                 updateProgress(20);
 
-                let binaryString = '';
-
-                if (source === 'github') {
-                    // Use jsDelivr CDN which has CORS enabled for GitHub releases
-                    const cdnUrl = `https://cdn.jsdelivr.net/gh/tallyhubpro/Tallyhub@latest/firmware/${selectedDevice}/${selectedDevice}.bin`;
-                    
-                    showStatus('Downloading firmware from CDN...', 'info');
-                    updateProgress(25);
-
-                    const response = await fetch(cdnUrl);
-                    if (!response.ok) throw new Error(`Download failed: ${response.statusText}`);
-                    
-                    const arrayBuffer = await response.arrayBuffer();
-                    binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
-                    updateProgress(30);
-                } else {
-                    const fileInput = document.getElementById('custom-file');
-                    if (!fileInput.files[0]) {
-                        showStatus('Please select a firmware file first', 'error');
-                        document.getElementById('progress-container').classList.remove('active');
-                        return;
-                    }
-
-                    showStatus('Reading firmware file...', 'info');
-                    const file = fileInput.files[0];
-                    const arrayBuffer = await file.arrayBuffer();
-                    binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
-                    updateProgress(30);
+                // Read firmware file
+                const fileInput = document.getElementById('custom-file');
+                if (!fileInput.files[0]) {
+                    showStatus('Please select a firmware file first', 'error');
+                    document.getElementById('progress-container').classList.remove('active');
+                    return;
                 }
+
+                showStatus('Reading firmware file...', 'info');
+                const file = fileInput.files[0];
+                const arrayBuffer = await file.arrayBuffer();
+                const binaryString = String.fromCharCode.apply(null, new Uint8Array(arrayBuffer));
+                updateProgress(30);
 
                 showStatus('Erasing flash...', 'info');
                 updateProgress(35);
