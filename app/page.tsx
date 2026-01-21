@@ -87,7 +87,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <FeatureCard 
               title="Multiple Mixer Support"
-              description="Works with OBS Studio, vMix, Blackmagic ATEM, and more"
+              description="Works with OBS Studio, vMix, Blackmagic ATEM, TriCaster, Roland, Panasonic, FOR-A, Ross Video, Grass Valley, and more"
               icon="🎚️"
             />
             <FeatureCard 
@@ -114,6 +114,86 @@ export default function Home() {
               title="Open Source"
               description="Transparent, community-driven development"
               icon="🔓"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Supported Mixers */}
+      <section className="py-20 bg-gray-900/50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-4">Supported Video Mixers</h2>
+          <p className="text-center text-gray-400 mb-12 text-lg">Works with 15+ professional mixer brands</p>
+          
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <MixerCard 
+              manufacturer="Blackmagic Design"
+              models={[
+                "ATEM Mini/Mini Pro/Mini Pro ISO/Mini Extreme",
+                "Television Studio (Pro HD/Pro 4K)",
+                "1ME/2ME/4ME Production Studio",
+                "Constellation 8K"
+              ]}
+            />
+            <MixerCard 
+              manufacturer="OBS Studio"
+              models={["All versions (via obs-websocket)"]}
+            />
+            <MixerCard 
+              manufacturer="vMix"
+              models={["All versions (via HTTP API)"]}
+            />
+            <MixerCard 
+              manufacturer="NewTek"
+              models={[
+                "TriCaster TC1",
+                "TriCaster Mini",
+                "Models with Tally over Ethernet"
+              ]}
+            />
+            <MixerCard 
+              manufacturer="Roland"
+              models={[
+                "V-60HD",
+                "XS-62S",
+                "VR-50HD-MKII",
+                "Other Smart Tally models"
+              ]}
+            />
+            <MixerCard 
+              manufacturer="Panasonic"
+              models={[
+                "AV-HS410",
+                "AV-HS6000",
+                "TSL UMD 3.1/5.0 compatible"
+              ]}
+            />
+            <MixerCard 
+              manufacturer="FOR-A"
+              models={[
+                "HVS-490/1200/2000/6000",
+                "TSL UMD 5.0 compatible"
+              ]}
+            />
+            <MixerCard 
+              manufacturer="Ross Video"
+              models={[
+                "Acuity",
+                "Carbonite (Black/Solo/Ultra)",
+                "Graphite, TouchDrive, Vision"
+              ]}
+            />
+            <MixerCard 
+              manufacturer="Grass Valley"
+              models={["TSL UMD 3.1/5.0 compatible"]}
+            />
+            <MixerCard 
+              manufacturer="Universal Protocols"
+              models={[
+                "TSL UMD 3.1 (UDP/TCP)",
+                "TSL UMD 5.0 (UDP/TCP)",
+                "Open Sound Control (OSC)"
+              ]}
             />
           </div>
         </div>
@@ -199,6 +279,22 @@ function HardwareCard({ name, description, price }: { name: string; description:
       <h3 className="text-xl font-semibold mb-2">{name}</h3>
       <p className="text-gray-400 mb-4">{description}</p>
       <p className="text-2xl font-bold text-red-500">{price}</p>
+    </div>
+  );
+}
+
+function MixerCard({ manufacturer, models }: { manufacturer: string; models: string[] }) {
+  return (
+    <div className="bg-gray-800/50 rounded-lg p-6 hover:bg-gray-800 transition-colors">
+      <h3 className="text-lg font-bold mb-3 text-red-400">{manufacturer}</h3>
+      <ul className="space-y-2 text-sm text-gray-300">
+        {models.map((model, index) => (
+          <li key={index} className="flex items-start">
+            <span className="text-green-400 mr-2">✓</span>
+            <span>{model}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

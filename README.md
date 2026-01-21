@@ -73,18 +73,47 @@ Then open: **`http://<your-ip>:3000/admin`**
 
 ### 🔌 Universal Compatibility
 **Supports 15+ Professional Mixers:**
-- OBS Studio
-- vMix
-- Blackmagic ATEM (Mini/Pro/Mini Pro ISO/Mini Extreme)
-- NewTek TriCaster
-- Roland Smart Tally
-- Panasonic AV-HS
-- FOR-A HVS Series
-- Ross Video Acuity/Carbonite
-- Grass Valley
-- TSL UMD 3.1 & 5.0 Protocol
-- Open Sound Control (OSC)
-- And more...
+
+#### By Manufacturer
+
+**Blackmagic Design**
+- ATEM Mini/Mini Pro/Mini Pro ISO/Mini Extreme
+- Television Studio (Pro HD/Pro 4K)
+- 1ME/2ME/4ME Production Studio
+- Constellation 8K (via ATEM connector)
+
+**NewTek**
+- TriCaster TC1, TriCaster Mini
+- Other models supporting Tally over Ethernet (via TriCaster connector)
+
+**StudioCoast**
+- vMix (via HTTP API)
+
+**Open Broadcaster Software**
+- OBS Studio (via obs-websocket)
+
+**Roland**
+- V‑60HD, XS‑62S, VR‑50HD‑MKII
+- Other Smart Tally‑capable mixers (via Roland Smart Tally connector)
+
+**Panasonic**
+- AV‑HS410, AV‑HS6000
+- Any model supporting TSL UMD 3.1 or 5.0 over Ethernet (via TSL UMD connectors)
+
+**FOR‑A**
+- HVS‑490, HVS‑1200, HVS‑2000, HVS‑6000
+- Any model supporting TSL UMD 5.0 (via TSL UMD 5.0 connector)
+
+**Ross Video**
+- Acuity, Carbonite (Black/Solo/Ultra), Graphite, TouchDrive, Vision (via TSL UMD connectors)
+
+**Grass Valley**
+- Mixers supporting TSL UMD 3.1/5.0 (via TSL UMD connectors)
+
+**Universal Protocols**
+- Open Sound Control (OSC) - Any OSC‑capable system
+- TSL UMD 3.1 Protocol - Any device emitting TSL UMD 3.1 packets (UDP/TCP)
+- TSL UMD 5.0 Protocol - Any device emitting TSL UMD 5.0 packets (UDP/TCP)
 
 ### 📱 Device Support
 Use any of these as tally lights:
