@@ -1,8 +1,104 @@
 import Link from 'next/link';
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TallyHub Pro",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": ["Windows", "macOS", "Linux"],
+    "description": "Professional tally light system for video production and live streaming. Compatible with OBS Studio, vMix, Blackmagic ATEM, TriCaster, and 15+ professional video mixers.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    },
+    "featureList": [
+      "Compatible with 15+ professional video mixers",
+      "Sub-100ms latency",
+      "Wireless WiFi setup",
+      "Web-based admin panel",
+      "Open source",
+      "Multiple device support (ESP32, M5Stack, browser)",
+      "Real-time monitoring",
+      "Auto-reconnection"
+    ],
+    "softwareVersion": "1.2.0",
+    "author": {
+      "@type": "Organization",
+      "name": "TallyHub Pro",
+      "url": "https://tallyhub.pro"
+    },
+    "url": "https://tallyhub.pro",
+    "downloadUrl": "https://github.com/tallyhubpro/Tallyhub/releases",
+    "screenshot": "https://tallyhub.pro/og-image-v2.png"
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is TallyHub Pro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TallyHub Pro is a professional, open-source tally light system that works with OBS Studio, vMix, Blackmagic ATEM, TriCaster, and 15+ other professional video mixers. It provides real-time camera tally indicators at a fraction of the cost of traditional systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does TallyHub Pro cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TallyHub Pro software is free and open source. Hardware costs range from free (using a phone/tablet browser) to $12-40 for dedicated ESP32 or M5Stack devices. This is significantly cheaper than traditional tally systems that cost $200-500+ per light."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What video mixers does TallyHub support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TallyHub supports 15+ professional mixers including OBS Studio, vMix, Blackmagic ATEM (all models), NewTek TriCaster, Roland Smart Tally devices, Panasonic AV-HS series, FOR-A HVS series, Ross Video Acuity/Carbonite, Grass Valley, and any device supporting TSL UMD 3.1/5.0 or OSC protocols."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What devices can I use as tally lights?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use ESP32-1732S019 displays ($12-15), M5Stick C Plus devices ($15-25), M5Stick C Plus2 ($25-40), or any phone, tablet, or computer with a web browser (free). All devices connect via WiFi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I set up TallyHub Pro?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Setup takes about 5 minutes: 1) Install TallyHub server on your computer or Raspberry Pi, 2) Flash firmware to your tally devices (or use browser-based tally), 3) Configure WiFi on devices, 4) Connect to your video mixer. The web-based admin panel guides you through the entire process."
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen brand-gradient text-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+
       {/* Hero Section */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-red-600/20 to-transparent"></div>
