@@ -637,7 +637,7 @@
                     <li>• Compact size</li>
                 </ul>
                 <div class="filename">M5Stick_Tally.bin</div>
-                <a href="https://github.com/tallyhubpro/Tallyhub/releases/download/v1.2.0/M5Stick_Tally.bin" download class="button button-block">Download Firmware</a>
+                <a href="/firmware/M5Stick_Tally.bin" download class="button button-block">Download Firmware</a>
             </div>
 
             <div class="firmware-card">
@@ -649,7 +649,7 @@
                     <li>• USB-C</li>
                 </ul>
                 <div class="filename">M5Stick_Tally_Plus2.bin</div>
-                <a href="https://github.com/tallyhubpro/Tallyhub/releases/download/v1.2.0/M5Stick_Tally_Plus2.bin" download class="button button-block">Download Firmware</a>
+                <a href="/firmware/M5Stick_Tally_Plus2.bin" download class="button button-block">Download Firmware</a>
             </div>
 
             <div class="firmware-card">
@@ -661,7 +661,7 @@
                     <li>• Very affordable</li>
                 </ul>
                 <div class="filename">ESP32-1732S019.bin</div>
-                <a href="https://github.com/tallyhubpro/Tallyhub/releases/download/v1.2.0/ESP32-1732S019.bin" download class="button button-block">Download Firmware</a>
+                <a href="/firmware/ESP32-1732S019.bin" download class="button button-block">Download Firmware</a>
             </div>
         </div>
 
@@ -814,6 +814,12 @@
                 return;
             }
 
+            // Check Web Serial support
+            if (!('serial' in navigator)) {
+                showStatus('Your browser does not support Web Serial. Please use Chrome or Edge on a secure context (HTTPS or localhost).', 'error');
+                return;
+            }
+
             const config = deviceConfigs[selectedDevice];
             const source = document.querySelector('input[name="firmware-source"]:checked').value;
 
@@ -841,8 +847,8 @@
                 let binaryString = '';
 
                 if (source === 'auto') {
-                    // Load firmware from GitHub releases
-                    const firmwareUrl = `https://github.com/tallyhubpro/Tallyhub/releases/download/v1.2.0/${selectedDevice}.bin`;
+                    // Load firmware from same-origin to avoid CORS issues
+                    const firmwareUrl = `/firmware/${selectedDevice}.bin`;
                     
                     showStatus('Downloading firmware...', 'info');
                     updateProgress(25);
